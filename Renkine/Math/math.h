@@ -6,26 +6,34 @@
 
 namespace renkine
 {
-	inline float toRadians(float degrees)
+	class Math
 	{
-		return degrees * (M_PI / 180.0f);
-	}
-	inline float lerp(float from, float to, float alpha)
-	{
-		return (1.0f - alpha) * from + alpha * to;
-	}
-	inline float min(float a, float b)
-	{
-		return (a < b) ? a : b;
-	}
-	inline float max(float a, float b)
-	{
-		return (a > b) ? a : b;
-	}
-	inline float clamp(float value, float min, float max)
-	{
-		return (value < min ? min : value > max ? max : value);
-	}
+	public:
+		static inline float toRadians(float degrees)
+		{
+			return degrees * ((float)M_PI / 180.0f);
+		}
+
+		static inline float lerp(float from, float to, float alpha)
+		{
+			return (1.0f - alpha) * from + alpha * to;
+		}
+		
+		static inline float min(float a, float b)
+		{
+			return (a < b) ? a : b;
+		}
+		
+		static inline float max(float a, float b)
+		{
+			return (a > b) ? a : b;
+		}
+
+		static inline float clamp(float value, float min, float max)
+		{
+			return (value < min ? min : value > max ? max : value);
+		}
+	};
 }
 
 #endif // RENKINE_MATH_MATH_H
