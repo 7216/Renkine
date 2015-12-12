@@ -1,6 +1,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <Renkine/Renkine.h>
+#include <Renkine\math.h>
+
+#include <iostream>
 
 int main()
 {
@@ -20,6 +23,11 @@ int main()
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+
+	renkine::Vector2 a = renkine::Vector2(5.0f, 5.0f);
+	renkine::Vector2 b = renkine::Vector2(5.0f, 5.0f);
+	renkine::Vector2 c = a*b;
+	printf("%f, %f", c.x, c.y);
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))

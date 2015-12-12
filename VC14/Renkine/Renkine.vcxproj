@@ -142,8 +142,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Renkine\deleteme.cpp" />
+    <ClCompile Include="..\..\Renkine\Math\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Renkine\math.h" />
+    <ClInclude Include="..\..\Renkine\Math\math.h" />
+    <ClInclude Include="..\..\Renkine\Math\Vector2.h" />
     <ClInclude Include="..\..\Renkine\Renkine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
