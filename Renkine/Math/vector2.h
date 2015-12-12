@@ -10,34 +10,61 @@ namespace renkine
 		Vector2();
 		Vector2(float x, float y);
 
-		Vector2 add( const Vector2 &other );
-		Vector2 substract( const Vector2 &other );
-		Vector2 multiply( const Vector2 &other );
-		Vector2 divide( const Vector2 &other );
+		Vector2 Add (const float &other);
+		Vector2 Substract (const float &other);
+		Vector2 Multiply (const float &other);
+		Vector2 Divide (const float &other);
 
-		float magnitude();
-		float length();
-		float dot();
+		Vector2 Add	(const Vector2 &other);
+		Vector2 Substract (const Vector2 &other);
+		Vector2 Multiply (const Vector2 &other);
+		Vector2 Divide (const Vector2 &other);
 
-		void normalize();
+		float Magnitude ();
+		float Length ();
+
+		void SetMagnitude (float magnitude);
+		void SetLength (float length);
+
+		float Dot ();
+
+		float Angle (Math::ANGLE_TYPE angle_type);
+
+		void Normalize ();
 		
-		void lerp( const Vector2 &other, float alpha );
-		void clamp( const Vector2 &min, const Vector2 &max );
+		void Lerp (const Vector2 &other, float alpha);
+		void Clamp (const Vector2 &min, const Vector2 &max);
 
-		bool equals( const Vector2 &other );
+		void Rotate (const float angle);
 
-		Vector2 operator + ( const Vector2 &other );
-		Vector2 operator - ( const Vector2 &other );
-		Vector2 operator * ( const Vector2 &other );
-		Vector2 operator / ( const Vector2 &other );
+		bool Equals (const Vector2 &other );
+		bool Equals (const float &other);
 
-		bool operator == ( const Vector2 &other );
-		bool operator != ( const Vector2 &other );
+		Vector2 operator + (const float &other);
+		Vector2 operator - (const float &other);
+		Vector2 operator * (const float &other);
+		Vector2 operator / (const float &other);
+
+		bool operator == (const float &other);
+		bool operator != (const float &other);
+
+		void operator += (const float &other);
+		void operator -= (const float &other);
+		void operator *= (const float &other);
+		void operator /= (const float &other);
+
+		Vector2 operator + (const Vector2 &other);
+		Vector2 operator - (const Vector2 &other);
+		Vector2 operator * (const Vector2 &other);
+		Vector2 operator / (const Vector2 &other);
+
+		bool operator == (const Vector2 &other);
+		bool operator != (const Vector2 &other);
 						 
-		void operator += ( const Vector2 &other );
-		void operator -= ( const Vector2 &other );
-		void operator *= ( const Vector2 &other );
-		void operator /= ( const Vector2 &other );
+		void operator += (const Vector2 &other);
+		void operator -= (const Vector2 &other);
+		void operator *= (const Vector2 &other);
+		void operator /= (const Vector2 &other);
 
 		//friend std::ostream& operator<<(std::ostream& stream, const Vector2 &vector);
 	};
