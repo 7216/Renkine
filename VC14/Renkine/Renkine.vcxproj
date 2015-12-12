@@ -70,12 +70,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)..\..\Builds\$(ProjectName)\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)..\..\Libs\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\..\;$(SolutionDir)..\..\Libs\Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)..\..\Libs\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)..\..\Builds\$(ProjectName)\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)..\..\Libs\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\..\;$(SolutionDir)..\..\Libs\Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)..\..\Libs\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -141,14 +141,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Renkine\deleteme.cpp" />
-    <ClCompile Include="..\..\Renkine\Math\Vector2.cpp" />
+    <ClCompile Include="..\..\Renkine\Graphics\graphics.cpp" />
+    <ClCompile Include="..\..\Renkine\Graphics\mesh_creator.cpp" />
+    <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Renkine\math.h" />
-    <ClInclude Include="..\..\Renkine\Math\math.h" />
-    <ClInclude Include="..\..\Renkine\Math\Vector2.h" />
+    <ClInclude Include="..\..\Renkine\Graphics\graphics.h" />
+    <ClInclude Include="..\..\Renkine\Graphics\mesh_creator.h" />
+    <ClInclude Include="..\..\Renkine\Graphics\renderer.h" />
     <ClInclude Include="..\..\Renkine\Renkine.h" />
+    <ClInclude Include="..\..\Renkine\Types\graphics_types.h" />
+    <ClInclude Include="..\..\Renkine\Types\types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
