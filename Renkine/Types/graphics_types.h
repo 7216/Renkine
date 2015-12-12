@@ -2,15 +2,10 @@
 #define RENKINE_TYPES_GRAPHICS_TYPES_H
 
 #include <Renkine/Types/types.h>
+#include <Renkine/Math/vector2.h>
 
 namespace renkine
 {
-	struct Vector2
-	{
-		float x, y;	
-	};
-
-
 	struct Mesh2D
 	{
 		Vector2 	*vertices;
