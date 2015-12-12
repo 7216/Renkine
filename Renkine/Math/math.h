@@ -1,3 +1,6 @@
+#ifndef RENKINE_MATH_MATH_H
+#define RENKINE_MATH_MATH_H
+
 #define _USE_MATH_DEFINES
 #include <math.h>
 
@@ -24,3 +27,5 @@ namespace renkine
 		return (value < min ? min : value > max ? max : value);
 	}
 }
+
+#endif // RENKINE_MATH_MATH_H
