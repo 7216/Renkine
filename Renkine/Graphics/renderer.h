@@ -1,5 +1,5 @@
-#ifndef RENKINE_GRAPHICS_RENDERER
-#define RENKINE_GRAPHICS_RENDERER
+#ifndef RENKINE_GRAPHICS_RENDERER_H
+#define RENKINE_GRAPHICS_RENDERER_H
 
 #include <Renkine/Types/types.h>
 #include <Renkine/Math/vector2.h>
@@ -15,4 +15,4 @@ namespace renkine
 	};
 }
 
-#endif // RENKINE_GRAPHICS_RENDERER
+#endif // RENKINE_GRAPHICS_RENDERER_H
