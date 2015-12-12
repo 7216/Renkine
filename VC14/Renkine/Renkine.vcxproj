@@ -83,7 +83,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;_CRT_NO_SECURE_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -112,7 +112,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;_CRT_NO_SECURE_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -144,12 +144,14 @@
     <ClCompile Include="..\..\Renkine\Graphics\graphics.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\mesh_creator.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp" />
+    <ClCompile Include="..\..\Renkine\Graphics\shader.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Renkine\Graphics\graphics.h" />
     <ClInclude Include="..\..\Renkine\Graphics\mesh_creator.h" />
     <ClInclude Include="..\..\Renkine\Graphics\renderer.h" />
+    <ClInclude Include="..\..\Renkine\Graphics\shader.h" />
     <ClInclude Include="..\..\Renkine\math.h" />
     <ClInclude Include="..\..\Renkine\Math\math.h" />
     <ClInclude Include="..\..\Renkine\Math\vector2.h" />
