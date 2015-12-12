@@ -24,8 +24,9 @@ namespace renkine
 
 	struct Renderable2D
 	{
-		u32 _vbo;
-		u32 _ebo;
+		u32 _vertex_buffer;
+		u32 _uv_buffer;
+		u32 _element_buffer;
 		
 		Mesh2D *mesh;
 	};

@@ -6,10 +6,11 @@
 
 namespace renkine
 {
-	class Renderer
+	class Renderer2D
 	{
 	public:
-
+		static Renderable2D *CreateRenderable (Mesh2D *mesh);
+		static void Render (Renderable2D *renderable, Vector2 position, float rotation);
 	};
 }
 
