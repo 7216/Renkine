@@ -1,3 +1,5 @@
+#ifndef RENKINE_MATH_VECTOR2_H
+#define RENKINE_MATH_VECTOR2_H
 
 namespace renkine
 {
@@ -40,3 +42,5 @@ namespace renkine
 		//friend std::ostream& operator<<(std::ostream& stream, const Vector2 &vector);
 	};
 }
+
+#endif  // RENKINE_MATH_VECTOR2_H

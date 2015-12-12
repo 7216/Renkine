@@ -2,6 +2,7 @@
 #define RENKINE_GRAPHICS_RENDERER
 
 #include <Renkine/Types/types.h>
+#include <Renkine/Math/vector2.h>
 #include <Renkine/Types/graphics_types.h>
 
 namespace renkine

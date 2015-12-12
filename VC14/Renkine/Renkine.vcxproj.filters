@@ -22,6 +22,12 @@
     <Filter Include="Header Files\Types">
       <UniqueIdentifier>{85a76865-e37d-4901-aef9-2a321d7f92f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{3bfb55f9-f4ce-4331-bfcc-7cb79c9d88a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{b868345b-eb88-4b71-b1de-7f9ecd53f849}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp">
@@ -32,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Renkine\Graphics\graphics.cpp">
       <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renkine\Math\vector2.cpp">
+      <Filter>Source Files\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Renkine\Graphics\graphics.h">
       <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renkine\Math\math.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renkine\Math\vector2.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renkine\math.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
