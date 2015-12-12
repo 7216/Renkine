@@ -144,7 +144,10 @@
     <ClCompile Include="..\..\Renkine\Graphics\graphics.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\mesh_creator.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp" />
+    <ClCompile Include="..\..\Renkine\Math\matrix4.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector2.cpp" />
+    <ClCompile Include="..\..\Renkine\Math\vector3.cpp" />
+    <ClCompile Include="..\..\Renkine\Math\vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Renkine\Graphics\graphics.h" />
@@ -152,7 +155,10 @@
     <ClInclude Include="..\..\Renkine\Graphics\renderer.h" />
     <ClInclude Include="..\..\Renkine\math.h" />
     <ClInclude Include="..\..\Renkine\Math\math.h" />
+    <ClInclude Include="..\..\Renkine\Math\matrix4.h" />
     <ClInclude Include="..\..\Renkine\Math\vector2.h" />
+    <ClInclude Include="..\..\Renkine\Math\vector3.h" />
+    <ClInclude Include="..\..\Renkine\Math\vector4.h" />
     <ClInclude Include="..\..\Renkine\Renkine.h" />
     <ClInclude Include="..\..\Renkine\Types\graphics_types.h" />
     <ClInclude Include="..\..\Renkine\Types\types.h" />

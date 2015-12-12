@@ -9,11 +9,14 @@ namespace renkine
 	class Math
 	{
 	public:
-		static inline float toRadians(float degrees)
+		static inline float ToRadians(float degrees)
 		{
 			return degrees * ((float)M_PI / 180.0f);
 		}
-
+		static inline float ToDegrees (float radians)
+		{
+			return radians * (180.0f / (float)M_PI);
+		}
 		static inline float lerp(float from, float to, float alpha)
 		{
 			return (1.0f - alpha) * from + alpha * to;
@@ -33,6 +36,7 @@ namespace renkine
 		{
 			return (value < min ? min : value > max ? max : value);
 		}
+		enum ANGLE_TYPE {RADIANS = 0, DEGREES = 1};
 	};
 }
 
