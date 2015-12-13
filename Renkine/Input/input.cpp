@@ -21,7 +21,7 @@ namespace renkine
 
 	void Input::key_callback (GLFWwindow *window, int key, int scancode, int action, int mods)
 	{
-		Keys[key] = action != GLFW_RELEASE;
+		Input::Keys[key] = action != GLFW_RELEASE;
 	}
 
 	void Input::button_callback (GLFWwindow *window, int key, int action, int mods)
@@ -31,8 +31,8 @@ namespace renkine
 
 	void Input::cursor_callback (GLFWwindow *window, double x, double y)
 	{
-		Mouse.x = x;
-		Mouse.y = y;
+		Input::Mouse.x = x;
+		Input::Mouse.y = y;
 	}
 
 	bool Input::isKeyDown (unsigned int key)
