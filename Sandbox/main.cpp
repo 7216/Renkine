@@ -45,7 +45,7 @@ int main()
 						 0.0f, 0.0f, 1.0f, 0.0f,
 						 0.0f, 0.0f, 0.0f, 1.0f};
 
-	float fov = 90.0f;
+	float fov = 120.0f;
 	float q = 1.0f / tan((fov * .5f) * (3.14f / 180.0f));
 	float a = q / (1280.0f / 720.0f);
 	float b = (0.01 + 1500) / (0.01 - 1500);
@@ -57,8 +57,14 @@ int main()
 	matrix[3 + 2 * 4] = -1.f;
 	matrix[2 + 3 * 4] = c;
 
+	renkine::Matrix4 MVP_Matrix = renkine::Matrix4 (1.0f);
+	MVP_Matrix.elements [0 + 0 * 4] = a;
+	MVP_Matrix.elements [1 + 1 * 4] = q;
+	MVP_Matrix.elements [2 + 2 * 4] = b;
+	MVP_Matrix.elements [3 + 2 * 4] = -1.f;
+	MVP_Matrix.elements [2 + 3 * 4] = c;
 
-	renkine::Graphics::SetProjectionMatrix (matrix);
+	renkine::Graphics::SetProjectionMatrix (MVP_Matrix);
 
 	renkine::Mesh2D *mesh = renkine::MeshCreator2D::CreateQuadMesh ({1.0f, 1.0f});
 	renkine::Renderable2D *renderable = renkine::Renderer2D::CreateRenderable (mesh);
@@ -76,7 +82,8 @@ int main()
 		/* Render here */
 		renkine::Graphics::Clear (renkine::RGB (255, 0, 255));
 
-		shader.enable ();
+		shader.SetUniformMatrix4 ("MVP_Matrix", MVP_Matrix);
+		shader.Enable ();
 		renkine::Renderer2D::Render (renderable, {0.f, 0.f}, 0);
 
 		/* Swap front and back buffers */
