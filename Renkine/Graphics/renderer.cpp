@@ -49,23 +49,26 @@ namespace renkine
 			glTranslatef (position.x, position.y, 0.0f);
 			glRotatef 	 (rotation, 0.0f, 0.0f, 1.0f);
 
-			glEnableClientState (GL_VERTEX_ARRAY);
+			//glEnableClientState (GL_VERTEX_ARRAY);
+			glEnableVertexAttribArray (0);
 			glBindBuffer (GL_ARRAY_BUFFER, renderable->_vertex_buffer);
-			glVertexPointer (2, GL_FLOAT, sizeof (Vector2), NULL);
+			//glVertexPointer (2, GL_FLOAT, sizeof (Vector2), NULL);
+			glVertexAttribPointer (0, 2, GL_FLOAT, GL_FALSE, sizeof (Vector2), NULL);
 
-			if (renderable->mesh->uv_coord_count != 0)
+			/*if (renderable->mesh->uv_coord_count != 0)
 			{
 				glEnableClientState (GL_TEXTURE_COORD_ARRAY);
 				glBindBuffer (GL_TEXTURE_COORD_ARRAY, renderable->_uv_buffer);
 				glTexCoordPointer (2, GL_FLOAT, sizeof (Vector2), NULL);
-			}
+			}*/
 
 			glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, renderable->_element_buffer);
 			glDrawElements (GL_TRIANGLES, renderable->mesh->index_count, GL_UNSIGNED_INT, NULL);
 			
 			
-			glDisableClientState (GL_VERTEX_ARRAY);
-			glDisableClientState (GL_TEXTURE_COORD_ARRAY);
+			/*glDisableClientState (GL_VERTEX_ARRAY);
+			glDisableClientState (GL_TEXTURE_COORD_ARRAY);*/
+			glDisableVertexAttribArray (0);
 
 			glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, 0);
 			glBindBuffer (GL_ARRAY_BUFFER, 0);
