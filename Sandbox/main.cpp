@@ -29,38 +29,9 @@ int main()
 	glfwGetMonitorPhysicalSize (glfwGetPrimaryMonitor (), &width, &height);
 	glfwSetWindowPos (window, width / 2, height / 2);
 
-	
-
-	float left = 0.0f;
-	float right = 1280.0f;
-	float top = 0.0f;
-	float bottom = 720.0f;
-	float zfar = 1.0f;
-	float znear = -1.0f;
-
-	float matrix [16] = {1.0f, 0.0f, 0.0f, 0.0f,
-						 0.0f, 1.0f, 0.0f, 0.0f,
-						 0.0f, 0.0f, 1.0f, 0.0f,
-						 0.0f, 0.0f, 0.0f, 1.0f};
-
-	float fov = 120.0f;
-	float q = 1.0f / tan((fov * .5f) * (3.14f / 180.0f));
-	float a = q / (1280.0f / 720.0f);
-	float b = (0.01 + 1500) / (0.01 - 1500);
-	float c = (2.0f * 0.01 * 1500) / (0.01 - 1500);
-
-	matrix[0 + 0 * 4] = a;
-	matrix[1 + 1 * 4] = q;
-	matrix[2 + 2 * 4] = b;
-	matrix[3 + 2 * 4] = -1.f;
-	matrix[2 + 3 * 4] = c;
 
 	renkine::Matrix4 MVP_Matrix = renkine::Matrix4 (1.0f);
-	MVP_Matrix.elements [0 + 0 * 4] = a;
-	MVP_Matrix.elements [1 + 1 * 4] = q;
-	MVP_Matrix.elements [2 + 2 * 4] = b;
-	MVP_Matrix.elements [3 + 2 * 4] = -1.f;
-	MVP_Matrix.elements [2 + 3 * 4] = c;
+	MVP_Matrix.Perspective (90.0f, 16.0f / 9.0f, 0.01f, 150.0f);
 
 	renkine::Graphics::SetProjectionMatrix (MVP_Matrix);
 
