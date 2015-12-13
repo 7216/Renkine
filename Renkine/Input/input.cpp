@@ -19,30 +19,30 @@ namespace renkine
 		}
 	}
 
-	void Input::key_callback (GLFWwindow *window, int key, int scancode, int action, int mods)
+	void Input::Key_callback (GLFWwindow *window, int key, int scancode, int action, int mods)
 	{
 		Input::Keys[key] = action != GLFW_RELEASE;
 	}
 
-	void Input::button_callback (GLFWwindow *window, int key, int action, int mods)
+	void Input::Button_callback (GLFWwindow *window, int key, int action, int mods)
 	{
 		Input::Buttons[key] = action != GLFW_RELEASE;
 	}
 
-	void Input::cursor_callback (GLFWwindow *window, double x, double y)
+	void Input::Cursor_callback (GLFWwindow *window, double x, double y)
 	{
 		Input::Mouse.x = x;
 		Input::Mouse.y = y;
 	}
 
-	bool Input::isKeyDown (unsigned int key)
+	bool Input::IsKeyDown (unsigned int key)
 	{
 		if (key >= RENKINE_DEFINES_MAX_KEYS) // TODO: Log it yo
 			return false;
 		return Input::Keys[key];
 	}
 
-	bool Input::isButtonDown (unsigned int button)
+	bool Input::IsButtonDown (unsigned int button)
 	{
 		if (button >= RENKINE_DEFINES_MAX_BUTTONS) // TODO: Log it yo
 			return false;

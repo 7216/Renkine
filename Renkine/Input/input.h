@@ -21,12 +21,12 @@ namespace renkine
 
 		static void Initialize ();
 
-		static void key_callback (GLFWwindow *window, int key, int scancode, int action, int mods);
-		static void button_callback (GLFWwindow *window, int key, int action, int mods);
-		static void cursor_callback (GLFWwindow *window, double x, double y);
+		static void Key_callback (GLFWwindow *window, int key, int scancode, int action, int mods);
+		static void Button_callback (GLFWwindow *window, int key, int action, int mods);
+		static void Cursor_callback (GLFWwindow *window, double x, double y);
 
-		static bool isKeyDown (unsigned int keycode);
-		static bool isButtonDown (unsigned int keycode);
+		static bool IsKeyDown (unsigned int keycode);
+		static bool IsButtonDown (unsigned int keycode);
 
 	};
 }

@@ -30,9 +30,9 @@ int main()
 	glfwSetWindowPos (window, width / 2, height / 2);
 	
 	renkine::Input::Initialize ();
-	glfwSetKeyCallback (window, renkine::Input::key_callback);
-	glfwSetMouseButtonCallback (window, renkine::Input::button_callback);
-	glfwSetCursorPosCallback (window, renkine::Input::cursor_callback);
+	glfwSetKeyCallback (window, renkine::Input::Key_callback);
+	glfwSetMouseButtonCallback (window, renkine::Input::Button_callback);
+	glfwSetCursorPosCallback (window, renkine::Input::Cursor_callback);
 
 
 	renkine::Matrix4 P_Matrix = renkine::Matrix4 (1.0f);
@@ -53,7 +53,7 @@ int main()
 	{
 		renkine::Graphics::Clear (renkine::RGB (255, 0, 255));
 
-		if (renkine::Input::isKeyDown (GLFW_KEY_S))
+		if (renkine::Input::IsKeyDown (GLFW_KEY_S))
 			z -= 0.016f * 5;
 		MV_Matrix = MV_Matrix.Translate ({3.0f, 0.0f, z}) * MV_Matrix.Scale ({0.1f, 0.1f, 1.0f});
 
