@@ -1,6 +1,8 @@
 #ifndef RENKINE_MATH_VECTOR3_H
 #define RENKINE_MATH_VECTOR3_H
 
+#include <Renkine/Math/math.h>
+
 namespace renkine
 {
 	struct Vector3
