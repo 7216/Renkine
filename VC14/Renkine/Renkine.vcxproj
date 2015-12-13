@@ -159,7 +159,6 @@
     <ClInclude Include="..\..\Renkine\Graphics\renderer.h" />
     <ClInclude Include="..\..\Renkine\Graphics\shader.h" />
     <ClInclude Include="..\..\Renkine\Input\input.h" />
-    <ClInclude Include="..\..\Renkine\math.h" />
     <ClInclude Include="..\..\Renkine\Math\math.h" />
     <ClInclude Include="..\..\Renkine\Math\matrix4.h" />
     <ClInclude Include="..\..\Renkine\Math\vector2.h" />
