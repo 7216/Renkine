@@ -36,4 +36,4 @@ namespace renkine
 	};
 }
 
-#endif  // RENKINE_MATH_Matrix4_H
+#endif  // RENKINE_MATH_MATRIX4_H

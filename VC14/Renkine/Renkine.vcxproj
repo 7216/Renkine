@@ -147,6 +147,7 @@
     <ClCompile Include="..\..\Renkine\Graphics\shader.cpp" />
     <ClCompile Include="..\..\Renkine\Math\matrix4.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector2.cpp" />
+    <ClCompile Include="..\..\Renkine\Math\vector3.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
