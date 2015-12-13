@@ -18,14 +18,14 @@ namespace renkine
 		Matrix4 ();
 		Matrix4 (float diagonal);
 
-		Matrix4 Identity ();
+		void Identity ();
 
-		Matrix4 Orthographic (float left, float right, float top, float bottom, float near, float far);
-		Matrix4 Perspective (float fov, float aspectRatio, float near, float far);
+		void Orthographic (float left, float right, float top, float bottom, float near, float far);
+		void Perspective (float fov, float aspectRatio, float near, float far);
 
-		Matrix4 Translate (const Vector3 translation);
-		Matrix4 Rotate (const Vector3 axis, float angle);
-		Matrix4 Scale (const Vector3 scale);
+		void Translate (const Vector3 translation);
+		void Rotate (const Vector3 axis, float angle);
+		void Scale (const Vector3 scale);
 
 		void Multiply (const Matrix4 &other);
 

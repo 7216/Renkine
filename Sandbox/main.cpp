@@ -3,7 +3,7 @@
 #include <Renkine/Renkine.h>
 #include <Renkine/math.h>
 #include <Renkine/Graphics/shader.h>
-#include <Renkine/Input/input.h>
+
 
 #include <iostream>
 
@@ -28,15 +28,10 @@ int main()
 	int width = 0, height = 0;
 	glfwGetMonitorPhysicalSize (glfwGetPrimaryMonitor (), &width, &height);
 	glfwSetWindowPos (window, width / 2, height / 2);
-	
-	renkine::Input::Initialize ();
-	glfwSetKeyCallback (window, renkine::Input::Key_callback);
-	glfwSetMouseButtonCallback (window, renkine::Input::Button_callback);
-	glfwSetCursorPosCallback (window, renkine::Input::Cursor_callback);
 
 
 	renkine::Matrix4 P_Matrix = renkine::Matrix4 (1.0f);
-	P_Matrix = P_Matrix.Perspective (120.0f, 16.0f / 9.0f, 0.01f, 150.0f);
+	P_Matrix.Perspective (120.0f, 16.0f / 9.0f, 0.01f, 150.0f);
 	
 	renkine::Matrix4 MV_Matrix = renkine::Matrix4 (1.0f);
 	
@@ -53,12 +48,8 @@ int main()
 	{
 		renkine::Graphics::Clear (renkine::RGB (255, 0, 255));
 
-		if (renkine::Input::IsKeyDown (GLFW_KEY_S))
-			z -= 0.016f * 5;
-		if (renkine::Input::IsKeyDown (GLFW_KEY_W))
-			z += 0.016f * 5;
-
-		MV_Matrix = MV_Matrix.Translate ({3.0f, 0.0f, z}) * MV_Matrix.Scale ({0.1f, 0.1f, 1.0f});
+		z -= 0.001f * 5;
+		//MV_Matrix.Translate ({3.0f, 0.0f, z}) * MV_Matrix.Scale ({0.1f, 0.1f, 1.0f});
 
 
 		renkine::Matrix4 MVP_Matrix = P_Matrix * MV_Matrix;
