@@ -2,10 +2,18 @@
 #define RENKINE_MATH_MATRIX4_H
 
 #include "vector4.h"
-#include "vector3.h"
+//#include "vector3.h"
+
+
 
 namespace renkine
 {
+	struct Vector3
+	{
+		float x, y, z;
+		Vector3 (float x, float y, float z) : x(x), y(y), z(z) {}
+	};
+
 	struct Matrix4
 	{
 		union {
