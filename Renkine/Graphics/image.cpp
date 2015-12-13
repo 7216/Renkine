@@ -11,8 +11,8 @@ namespace renkine
 		image.height = 0;
 		image.bytes_per_pixel = 0;
 
-		image->bytes = stbi_load (filepath, image.width, image.height, image.bytes_per_pixel, STBI_rgb_alpha);
-		if (image->bytes == NULL)
+		image.bytes = stbi_load (filepath, &image.width, &image.height, &image.bytes_per_pixel, STBI_rgb_alpha);
+		if (image.bytes == NULL)
 		{
 			return false;
 		}

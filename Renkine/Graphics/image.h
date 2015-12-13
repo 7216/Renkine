@@ -8,9 +8,9 @@ namespace renkine
 	struct Image
 	{
 		u8	*bytes;
-		u32	width;
-		u32 height;
-		u8 	bytes_per_pixel;
+		int	width;
+		int height;
+		int	bytes_per_pixel;
 	};
 
 	class ImageLoader
