@@ -29,8 +29,9 @@ namespace renkine
 			fseek (vertex_shader_file, 0, SEEK_SET);
 			char* vertexSource = NULL;
 			vertexSource = (char *) malloc (size + 1);
+			memset (vertexSource, '\0', size + 1);
 			fread ((void *) vertexSource, size, 1, vertex_shader_file);
-			vertexSource [size] = '\0';
+			
 				
 
 			glShaderSource(vertex, 1, &vertexSource, NULL);
@@ -65,8 +66,9 @@ namespace renkine
 			fseek (fragment_shader_file, 0, SEEK_SET);
 			char* fragmentSource = NULL;
 			fragmentSource = (char *) malloc (size + 1);
+			memset (fragmentSource, '\0', size + 1);
+
 			fread ((void *) fragmentSource, size, 1, fragment_shader_file);
-			fragmentSource [size] = '\0';
 			glShaderSource(fragment, 1, &fragmentSource, NULL);
 			glCompileShader(fragment);
 
