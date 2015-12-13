@@ -106,41 +106,41 @@ namespace renkine
 		return program;
 	}
 
-	GLint Shader::getUniformLocation(const GLchar *name)
+	GLint Shader::GetUniformLocation(const GLchar *name)
 	{
 		return glGetUniformLocation(_ShaderID, name);
 	}
 
-/*	void Shader::setUniformMatrix1f(const GLchar *name, float value)
+	void Shader::SetUniformMatrix1f(const GLchar *name, float value)
 	{
-		glUniform1f(getUniformLocation(name), value);
+		glUniform1f(GetUniformLocation(name), value);
 	}
-	void Shader::setUniformMatrix1i(const GLchar *name, int value)
+	void Shader::SetUniformMatrix1i(const GLchar *name, int value)
 	{
-		glUniform1i(getUniformLocation(name), value);
+		glUniform1i(GetUniformLocation(name), value);
 	}
-	void Shader::setUniformMatrix2f(const GLchar *name, const DMath::Vector2& vector)
+	void Shader::SetUniformMatrix2f(const GLchar *name, const renkine::Vector2& vector)
 	{
-		glUniform2f(getUniformLocation(name), vector._x, vector._y);
+		glUniform2f(GetUniformLocation(name), vector.x, vector.y);
 	}
-	void Shader::setUniformMatrix3f(const GLchar *name, const DMath::Vector3& vector)
+	/*void Shader::SetUniformMatrix3f(const GLchar *name, const DMath::Vector3& vector)
 	{
-		glUniform3f(getUniformLocation(name), vector._x, vector._y, vector._z);
-	}
-	void Shader::setUniformMatrix4f(const GLchar *name, const DMath::Vector4& vector)
-	{
-		glUniform4f(getUniformLocation(name), vector._x, vector._y, vector._z, vector._w);
-	}
-	void Shader::setUniformMatrix4(const GLchar *name, const DMath::Matrix4& matrix)
-	{
-		glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
+		glUniform3f(GetUniformLocation(name), vector._x, vector._y, vector._z);
 	}*/
+	void Shader::SetUniformMatrix4f(const GLchar *name, const renkine::Vector4& vector)
+	{
+		glUniform4f(GetUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
+	}
+	void Shader::SetUniformMatrix4(const GLchar *name, const renkine::Matrix4& matrix)
+	{
+		glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, matrix.elements);
+	}
 
-	void Shader::enable() const
+	void Shader::Enable() const
 	{
 		glUseProgram(_ShaderID);
 	}
-	void Shader::disable() const
+	void Shader::Disable() const
 	{
 		glUseProgram(0);
 	}

@@ -3,11 +3,11 @@
 
 namespace renkine
 {
-	void Graphics::SetProjectionMatrix (float *matrix)
+	void Graphics::SetProjectionMatrix (renkine::Matrix4 &matrix)
 	{
 		glMatrixMode (GL_PROJECTION);
 		glLoadIdentity ();
-		glLoadMatrixf (matrix);
+		glLoadMatrixf (matrix.elements);
 		glMatrixMode (GL_MODELVIEW);
 	}
 

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <GL\glew.h>
+#include <Renkine/Math/vector2.h>
+#include <Renkine/Math/matrix4.h>
 
 namespace renkine
 {
@@ -13,7 +15,7 @@ namespace renkine
 		GLuint _ShaderID;
 		const char* _VertexPath, *_FragmentPath;
 
-		GLint getUniformLocation(const GLchar *name);
+		GLint GetUniformLocation(const GLchar *name);
 
 		GLuint load();
 	public:
@@ -22,15 +24,15 @@ namespace renkine
 
 			
 
-		/*void setUniformMatrix1f(const GLchar *name, float value);
-		void setUniformMatrix1i(const GLchar *name, int value);
-		void setUniformMatrix2f(const GLchar *name, const DMath::Vector2& vector);
-		void setUniformMatrix3f(const GLchar *name, const DMath::Vector3& vector);
-		void setUniformMatrix4f(const GLchar *name, const DMath::Vector4& vector);
-		void setUniformMatrix4(const GLchar *name, const DMath::Matrix4& matrix);*/
+		void SetUniformMatrix1f(const GLchar *name, float value);
+		void SetUniformMatrix1i(const GLchar *name, int value);
+		void SetUniformMatrix2f(const GLchar *name, const renkine::Vector2& vector);
+		//void SetUniformMatrix3f(const GLchar *name, const renkine::Vector3& vector);
+		void SetUniformMatrix4f(const GLchar *name, const renkine::Vector4& vector);
+		void SetUniformMatrix4(const GLchar *name, const renkine::Matrix4& matrix);
 
-		void enable() const;
-		void disable() const;
+		void Enable() const;
+		void Disable() const;
 	};
 }
 
