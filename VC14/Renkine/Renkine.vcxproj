@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Renkine\Graphics\graphics.cpp" />
+    <ClCompile Include="..\..\Renkine\Graphics\image.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\mesh_creator.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\shader.cpp" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Renkine\Graphics\graphics.h" />
+    <ClInclude Include="..\..\Renkine\Graphics\image.h" />
     <ClInclude Include="..\..\Renkine\Graphics\mesh_creator.h" />
     <ClInclude Include="..\..\Renkine\Graphics\renderer.h" />
     <ClInclude Include="..\..\Renkine\Graphics\shader.h" />
