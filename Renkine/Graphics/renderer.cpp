@@ -46,9 +46,6 @@ namespace renkine
 	void renkine::Renderer2D::Render (Renderable2D *renderable, Vector2 position, float rotation)
 	{
 		glPushMatrix ();
-			glTranslatef (position.x, position.y, 0.0f);
-			glRotatef 	 (rotation, 0.0f, 0.0f, 1.0f);
-
 			glEnableVertexAttribArray (0);
 			glBindBuffer (GL_ARRAY_BUFFER, renderable->_vertex_buffer);
 			glVertexAttribPointer (0, 2, GL_FLOAT, GL_FALSE, sizeof (Vector2), NULL);

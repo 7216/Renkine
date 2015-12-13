@@ -5,10 +5,7 @@ namespace renkine
 {
 	void Graphics::SetProjectionMatrix (renkine::Matrix4 &matrix)
 	{
-		glMatrixMode (GL_PROJECTION);
-		glLoadIdentity ();
-		glLoadMatrixf (matrix.elements);
-		glMatrixMode (GL_MODELVIEW);
+		
 	}
 
 	void Graphics::Clear (RGB color)
