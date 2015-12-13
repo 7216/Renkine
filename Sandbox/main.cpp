@@ -36,7 +36,7 @@ int main()
 
 
 	renkine::Matrix4 P_Matrix = renkine::Matrix4 (1.0f);
-	P_Matrix.Perspective (120.0f, 16.0f / 9.0f, 0.01f, 150.0f);
+	P_Matrix = P_Matrix.Perspective (120.0f, 16.0f / 9.0f, 0.01f, 150.0f);
 	
 	renkine::Matrix4 MV_Matrix = renkine::Matrix4 (1.0f);
 	
@@ -55,6 +55,9 @@ int main()
 
 		if (renkine::Input::IsKeyDown (GLFW_KEY_S))
 			z -= 0.016f * 5;
+		if (renkine::Input::IsKeyDown (GLFW_KEY_W))
+			z += 0.016f * 5;
+
 		MV_Matrix = MV_Matrix.Translate ({3.0f, 0.0f, z}) * MV_Matrix.Scale ({0.1f, 0.1f, 1.0f});
 
 
