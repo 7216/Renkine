@@ -42,18 +42,18 @@ namespace renkine
 		bool Equals (const Vector2 &other );
 		bool Equals (const float &other);
 
-		Vector2 operator + (const float &other);
-		Vector2 operator - (const float &other);
-		Vector2 operator * (const float &other);
-		Vector2 operator / (const float &other);
+		Vector2 operator + (const float other);
+		Vector2 operator - (const float other);
+		Vector2 operator * (const float other);
+		Vector2 operator / (const float other);
 
-		bool operator == (const float &other);
-		bool operator != (const float &other);
+		bool operator == (const float other);
+		bool operator != (const float other);
 
-		void operator += (const float &other);
-		void operator -= (const float &other);
-		void operator *= (const float &other);
-		void operator /= (const float &other);
+		void operator += (const float other);
+		void operator -= (const float other);
+		void operator *= (const float other);
+		void operator /= (const float other);
 
 		Vector2 operator + (const Vector2 &other);
 		Vector2 operator - (const Vector2 &other);

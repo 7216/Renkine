@@ -120,54 +120,54 @@ namespace renkine
 		return x == other.x && y == other.y && z == other.z && w == other.w;
 	}
 
-	Vector4 Vector4::operator + (const float &other)
+	Vector4 Vector4::operator + (const float other)
 	{
 		return Add (other);
 	}
-	Vector4 Vector4::operator - (const float &other)
+	Vector4 Vector4::operator - (const float other)
 	{
 		return Substract (other);
 	}
-	Vector4 Vector4::operator * (const float &other)
+	Vector4 Vector4::operator * (const float other)
 	{
 		return Multiply (other);
 	}
-	Vector4 Vector4::operator / (const float &other)
+	Vector4 Vector4::operator / (const float other)
 	{
 		return Divide (other);
 	}
 
-	bool Vector4::operator == (const float &other)
+	bool Vector4::operator == (const float other)
 	{
 		return Equals (other);
 	}
-	bool Vector4::operator != (const float &other)
+	bool Vector4::operator != (const float other)
 	{
 		return !(*this == other);
 	}
 
-	void Vector4::operator += (const float &other)
+	void Vector4::operator += (const float other)
 	{
 		x += other;
 		y += other;
 		z += other;
 		w += other;
 	}
-	void Vector4::operator -= (const float &other)
+	void Vector4::operator -= (const float other)
 	{
 		x -= other;
 		y -= other;
 		z -= other;
 		w -= other;
 	}
-	void Vector4::operator *= (const float &other)
+	void Vector4::operator *= (const float other)
 	{
 		x *= other;
 		y *= other;
 		z *= other;
 		w *= other;
 	}
-	void Vector4::operator /= (const float &other)
+	void Vector4::operator /= (const float other)
 	{
 		x /= other;
 		y /= other;

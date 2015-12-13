@@ -116,51 +116,51 @@ namespace renkine
 		return x == other.x && y == other.y && z == other.z;
 	}
 
-	Vector3 Vector3::operator + (const float &other)
+	Vector3 Vector3::operator + (const float other)
 	{
 		return Add (other);
 	}
-	Vector3 Vector3::operator - (const float &other)
+	Vector3 Vector3::operator - (const float other)
 	{
 		return Substract (other);
 	}
-	Vector3 Vector3::operator * (const float &other)
+	Vector3 Vector3::operator * (const float other)
 	{
 		return Multiply (other);
 	}
-	Vector3 Vector3::operator / (const float &other)
+	Vector3 Vector3::operator / (const float other)
 	{
 		return Divide (other);
 	}
 
-	bool Vector3::operator == (const float &other)
+	bool Vector3::operator == (const float other)
 	{
 		return Equals (other);
 	}
-	bool Vector3::operator != (const float &other)
+	bool Vector3::operator != (const float other)
 	{
 		return !(*this == other);
 	}
 
-	void Vector3::operator += (const float &other)
+	void Vector3::operator += (const float other)
 	{
 		x += other;
 		y += other;
 		z += other;
 	}
-	void Vector3::operator -= (const float &other)
+	void Vector3::operator -= (const float other)
 	{
 		x -= other;
 		y -= other;
 		z -= other;
 	}
-	void Vector3::operator *= (const float &other)
+	void Vector3::operator *= (const float other)
 	{
 		x *= other;
 		y *= other;
 		z *= other;
 	}
-	void Vector3::operator /= (const float &other)
+	void Vector3::operator /= (const float other)
 	{
 		x /= other;
 		y /= other;

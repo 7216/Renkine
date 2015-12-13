@@ -118,48 +118,48 @@ namespace renkine
 		return x == other.x && y == other.y;
 	}
 
-	Vector2 Vector2::operator + (const float &other)
+	Vector2 Vector2::operator + (const float other)
 	{
 		return Add (other);
 	}
-	Vector2 Vector2::operator - (const float &other)
+	Vector2 Vector2::operator - (const float other)
 	{
 		return Substract (other);
 	}
-	Vector2 Vector2::operator * (const float &other)
+	Vector2 Vector2::operator * (const float other)
 	{
 		return Multiply (other);
 	}
-	Vector2 Vector2::operator / (const float &other)
+	Vector2 Vector2::operator / (const float other)
 	{
 		return Divide (other);
 	}
 
-	bool Vector2::operator == (const float &other)
+	bool Vector2::operator == (const float other)
 	{
 		return Equals (other);
 	}
-	bool Vector2::operator != (const float &other)
+	bool Vector2::operator != (const float other)
 	{
 		return !(*this == other);
 	}
 
-	void Vector2::operator += (const float &other)
+	void Vector2::operator += (const float other)
 	{
 		x += other;
 		y += other;
 	}
-	void Vector2::operator -= (const float &other)
+	void Vector2::operator -= (const float other)
 	{
 		x -= other;
 		y -= other;
 	}
-	void Vector2::operator *= (const float &other)
+	void Vector2::operator *= (const float other)
 	{
 		x *= other;
 		y *= other;
 	}
-	void Vector2::operator /= (const float &other)
+	void Vector2::operator /= (const float other)
 	{
 		x /= other;
 		y /= other;

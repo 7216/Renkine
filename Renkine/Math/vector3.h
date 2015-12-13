@@ -40,7 +40,7 @@ namespace renkine
 		void Rotate (const float angle);
 
 		bool Equals (const Vector3 &other );
-		bool Equals (const float other);
+		bool Equals (const float &other);
 
 		Vector3 operator + (const float other);
 		Vector3 operator - (const float other);
