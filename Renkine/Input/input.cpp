@@ -5,17 +5,17 @@ namespace renkine
 	bool Input::Keys[RENKINE_DEFINES_MAX_KEYS];
 	bool Input::Buttons[RENKINE_DEFINES_MAX_BUTTONS];
 
-	Vector2 Mouse;
+	Vector2 Input::Mouse;
 
 	void Input::Initialize ()
 	{
 		for (int i = 0; i < RENKINE_DEFINES_MAX_KEYS; i++)
 		{
-			Keys[i] = false;
+			Input::Keys[i] = false;
 		}
 		for (int i = 0; i < RENKINE_DEFINES_MAX_BUTTONS; i++)
 		{
-			Buttons[i] = false;
+			Input::Buttons[i] = false;
 		}
 	}
 
@@ -26,7 +26,7 @@ namespace renkine
 
 	void Input::button_callback (GLFWwindow *window, int key, int action, int mods)
 	{
-		Buttons[key] = action != GLFW_RELEASE;
+		Input::Buttons[key] = action != GLFW_RELEASE;
 	}
 
 	void Input::cursor_callback (GLFWwindow *window, double x, double y)
@@ -39,7 +39,7 @@ namespace renkine
 	{
 		if (key >= RENKINE_DEFINES_MAX_KEYS) // TODO: Log it yo
 			return false;
-		return Keys[key];
+		return Input::Keys[key];
 	}
 
 	bool Input::isButtonDown (unsigned int button)
@@ -47,7 +47,7 @@ namespace renkine
 		if (button >= RENKINE_DEFINES_MAX_BUTTONS) // TODO: Log it yo
 			return false;
 
-		return Buttons[button];
+		return Input::Buttons[button];
 	}
 
 }

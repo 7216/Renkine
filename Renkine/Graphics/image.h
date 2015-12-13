@@ -17,7 +17,7 @@ namespace renkine
 	{
 	public:
 		static bool LoadImage (const char *filepath, Image &image);
-		static bool FreeImage (Image &image);
+		static void FreeImage (Image &image);
 	};
 }
 

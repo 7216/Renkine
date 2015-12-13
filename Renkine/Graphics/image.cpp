@@ -20,7 +20,7 @@ namespace renkine
 		return true;
 	}
 
-	bool ImageLoader::FreeImage (Image &image)
+	void ImageLoader::FreeImage (Image &image)
 	{
 		if (image.bytes != NULL)
 		{
