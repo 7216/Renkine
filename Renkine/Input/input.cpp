@@ -1,0 +1,56 @@
+#include "input.h"
+
+namespace renkine
+{
+	class Input
+	{
+		bool Input::Keys[RENKINE_DEFINES_MAX_KEYS];
+		bool Input::Buttons[RENKINE_DEFINES_MAX_BUTTONS];
+
+		Vector2 Mouse;
+
+		void Input::Initialize ()
+		{
+			for (int i = 0; i < RENKINE_DEFINES_MAX_KEYS; i++)
+			{
+				Keys[i] = false;
+			}
+			for (int i = 0; i < RENKINE_DEFINES_MAX_BUTTONS; i++)
+			{
+				Buttons[i] = false;
+			}
+		}
+
+		void Input::key_callback (GLFWwindow *window, int key, int scancode, int action, int mods)
+		{
+			Keys[key] = action != GLFW_RELEASE;
+		}
+
+		void Input::button_callback (GLFWwindow *window, int key, int action, int mods)
+		{
+			Buttons[key] = action != GLFW_RELEASE;
+		}
+
+		void Input::cursor_callback (GLFWwindow *window, double x, double y)
+		{
+			Mouse.x = x;
+			Mouse.y = y;
+		}
+
+		bool Input::isKeyDown (unsigned int key)
+		{
+			if (key >= RENKINE_DEFINES_MAX_KEYS) // TODO: Log it yo
+				return false;
+			return Keys[key];
+		}
+
+		bool Input::isButtonDown (unsigned int button)
+		{
+			if (button >= RENKINE_DEFINES_MAX_BUTTONS) // TODO: Log it yo
+				return false;
+
+			return Buttons[button];
+		}
+	};
+}
+

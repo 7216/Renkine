@@ -145,8 +145,10 @@
     <ClCompile Include="..\..\Renkine\Graphics\mesh_creator.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\shader.cpp" />
+    <ClCompile Include="..\..\Renkine\Input\input.cpp" />
     <ClCompile Include="..\..\Renkine\Math\matrix4.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector2.cpp" />
+    <ClCompile Include="..\..\Renkine\Math\vector3.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +156,7 @@
     <ClInclude Include="..\..\Renkine\Graphics\mesh_creator.h" />
     <ClInclude Include="..\..\Renkine\Graphics\renderer.h" />
     <ClInclude Include="..\..\Renkine\Graphics\shader.h" />
+    <ClInclude Include="..\..\Renkine\Input\input.h" />
     <ClInclude Include="..\..\Renkine\math.h" />
     <ClInclude Include="..\..\Renkine\Math\math.h" />
     <ClInclude Include="..\..\Renkine\Math\matrix4.h" />
