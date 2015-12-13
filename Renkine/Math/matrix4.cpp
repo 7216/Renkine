@@ -22,88 +22,73 @@ namespace renkine
 		elements[3 + 3 * 4] = diagonal;
 	}
 
-	Matrix4 Matrix4::Identity ()
+	void Matrix4::Identity ()
 	{
-		return Matrix4 (1.0f);
+		for (int i = 0; i < 4 * 4; i++)
+		{
+			elements[i] = 0.0f;
+		}
+		elements[0 + 0 * 4] = 1.0f;
+		elements[1 + 1 * 4] = 1.0f;
+		elements[2 + 2 * 4] = 1.0f;
+		elements[3 + 3 * 4] = 1.0f;
 	}
 
-	Matrix4 Matrix4::Orthographic (float left, float right, float top, float bottom, float near, float far)
+	void Matrix4::Orthographic (float left, float right, float top, float bottom, float near, float far)
 	{
-		Matrix4 result (1.0f);
+		elements[0 + 0 * 4] = 2.0f / (right - left);
+		elements[1 + 1 * 4] = 2.0f / (top - bottom);
+		elements[2 + 2 * 4] = 2.0f / (near - far);
 
-		result.elements[0 + 0 * 4] = 2.0f / (right - left);
-		result.elements[1 + 1 * 4] = 2.0f / (top - bottom);
-		result.elements[2 + 2 * 4] = 2.0f / (near - far);
-
-		result.elements[0 + 3 * 4] = (left + right) / (left - right);
-		result.elements[1 + 3 * 4] = (bottom + top) / (bottom - top);
-		result.elements[2 + 3 * 4] = (far + near) / (far - near);
-
-		return result;
+		elements[0 + 3 * 4] = (left + right) / (left - right);
+		elements[1 + 3 * 4] = (bottom + top) / (bottom - top);
+		elements[2 + 3 * 4] = (far + near) / (far - near);
 	}
-	Matrix4 Matrix4::Perspective (float fov, float aspectRatio, float near, float far)
+	void Matrix4::Perspective (float fov, float aspectRatio, float near, float far)
 	{
-		Matrix4 result (1.0f);
-
 		float q = 1.0f / tan (Math::ToRadians (fov * .5f));
 		float a = q / aspectRatio;
 		float b = (near + far) / (near - far);
 		float c = (2.0f * near * far) / (near - far);
 
-		result.elements[0 + 0 * 4] = a;
-		result.elements[1 + 1 * 4] = q;
-		result.elements[2 + 2 * 4] = b;
-		result.elements[3 + 2 * 4] = -1.f;
-		result.elements[2 + 3 * 4] = c;
-
-		return result;
+		elements[0 + 0 * 4] = a;
+		elements[1 + 1 * 4] = q;
+		elements[2 + 2 * 4] = b;
+		elements[3 + 2 * 4] = -1.f;
+		elements[2 + 3 * 4] = c;
 	}
 
-	Matrix4 Matrix4::Translate (const Vector3 translation)
+	void Matrix4::Translate (const Vector3 translation)
 	{
-		Matrix4 result (1.0f);
-
-		result.elements[0 + 3 * 4] = translation.x;
-		result.elements[1 + 3 * 4] = translation.y;
-		result.elements[2 + 3 * 4] = translation.z;
-
-		return result;
+		elements[0 + 3 * 4] = translation.x;
+		elements[1 + 3 * 4] = translation.y;
+		elements[2 + 3 * 4] = translation.z;
 	}
-	Matrix4 Matrix4::Rotate (const Vector3 axis, float angle)
+	void Matrix4::Rotate (const Vector3 axis, float angle)
 	{
-		Matrix4 result (1.0f);
-
 		float radians = Math::ToRadians (angle);
 		float cosine = cos (radians);
 		float sine = sin (radians);
-
-
-
+	
 		float oneMinusCosine = 1.0f - cosine;
 
-		result.elements[0 + 0 * 4] = axis.x * oneMinusCosine + cosine;
-		result.elements[1 + 0 * 4] = axis.y * axis.x * oneMinusCosine + axis.z * sine;
-		result.elements[2 + 0 * 4] = axis.x * axis.z * oneMinusCosine - axis.y * sine;
+		elements[0 + 0 * 4] = axis.x * oneMinusCosine + cosine;
+		elements[1 + 0 * 4] = axis.y * axis.x * oneMinusCosine + axis.z * sine;
+		elements[2 + 0 * 4] = axis.x * axis.z * oneMinusCosine - axis.y * sine;
 
-		result.elements[0 + 1 * 4] = axis.x * axis.y * oneMinusCosine - axis.z * sine;
-		result.elements[1 + 1 * 4] = axis.y * oneMinusCosine + cosine;
-		result.elements[2 + 1 * 4] = axis.y * axis.z * oneMinusCosine + axis.x * sine;
+		elements[0 + 1 * 4] = axis.x * axis.y * oneMinusCosine - axis.z * sine;
+		elements[1 + 1 * 4] = axis.y * oneMinusCosine + cosine;
+		elements[2 + 1 * 4] = axis.y * axis.z * oneMinusCosine + axis.x * sine;
 
-		result.elements[0 + 2 * 4] = axis.x * axis.z * oneMinusCosine + axis.y * sine;
-		result.elements[1 + 2 * 4] = axis.y * axis.z * oneMinusCosine - axis.x * sine;
-		result.elements[2 + 2 * 4] = axis.z * oneMinusCosine + cosine;
-
-		return result;
+		elements[0 + 2 * 4] = axis.x * axis.z * oneMinusCosine + axis.y * sine;
+		elements[1 + 2 * 4] = axis.y * axis.z * oneMinusCosine - axis.x * sine;
+		elements[2 + 2 * 4] = axis.z * oneMinusCosine + cosine;
 	}
-	Matrix4 Matrix4::Scale (const Vector3 scale)
+	void Matrix4::Scale (const Vector3 scale)
 	{
-		Matrix4 result (1.0f);
-
-		result.elements[0 + 0 * 4] = scale.x;
-		result.elements[1 + 1 * 4] = scale.y;
-		result.elements[2 + 2 * 4] = scale.z;
-
-		return result;
+		elements[0 + 0 * 4] = scale.x;
+		elements[1 + 1 * 4] = scale.y;
+		elements[2 + 2 * 4] = scale.z;
 	}
 
 	void Matrix4::Multiply (const Matrix4 &other)
