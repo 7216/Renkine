@@ -4,8 +4,6 @@
 #include "vector4.h"
 #include "vector3.h"
 
-
-
 namespace renkine
 {
 	struct Matrix4
