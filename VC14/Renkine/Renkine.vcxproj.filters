@@ -110,5 +110,8 @@
     <ClInclude Include="..\..\Renkine\Graphics\image.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Renkine\Graphics\camera.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -153,6 +153,7 @@
     <ClCompile Include="..\..\Renkine\Math\vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Renkine\Graphics\camera.h" />
     <ClInclude Include="..\..\Renkine\Graphics\graphics.h" />
     <ClInclude Include="..\..\Renkine\Graphics\image.h" />
     <ClInclude Include="..\..\Renkine\Graphics\mesh_creator.h" />
