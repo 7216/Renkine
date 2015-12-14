@@ -31,9 +31,10 @@ int main (int argc, char **argv)
 	projection.Perspective (90.0f, 16.0f / 9.0f, 0.01f, 1500.0f);
 	modelview.Identity ();
 
-	renkine::Vector3 camera_position = {0.0f, 0.0f, 5.0f};
+
+	renkine::Vector3 camera_position = {0.0f, 0.0f, 0.0f};
 	renkine::Vector3 position = {0.0f, 0.0f, -5.0f};
-	float vertices[] = {
+	/*float vertices[] = {
 		0.0f, 0.0f, 0.0f,
 		1.0f, 0.0f, 0.0f,
 		1.0f, 1.0f, 0.0f,
@@ -54,17 +55,24 @@ int main (int argc, char **argv)
 	glBindBuffer (GL_ARRAY_BUFFER, vbo);
 	glBufferData (GL_ARRAY_BUFFER, (sizeof (float) * 3) * 4, vertices, GL_STATIC_DRAW);
 
-	glGenBuffers		(1, &ebo);
+	glGenBuffers (1, &ebo);
 	glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, ebo);
-	glBufferData (GL_ELEMENT_ARRAY_BUFFER, (sizeof (renkine::u32) * 3) * 2, indices, GL_STATIC_DRAW);
+	glBufferData (GL_ELEMENT_ARRAY_BUFFER, (sizeof (renkine::u32) * 3) * 2, indices, GL_STATIC_DRAW);*/
 
 
+	renkine::Camera camera;
+	camera.model_view.Translate (camera_position);
+	camera.projection.Perspective (90.0f, 16.0f / 9.0f, 0.01f, 1500.0f);
+	
+	renkine::Mesh *mesh = renkine::MeshCreator::CreateQuadMesh ({1.0f, 1.0f});
+	renkine::Renderable *renderable = renkine::Renderer::CreateRenderable (mesh, "test.vert", "test.frag");
 
 
 	while (!glfwWindowShouldClose(window))
 	{
 		renkine::Graphics::Clear (renkine::RGB (0, 0, 0));
 
+		/*shader.Enable ();
 		shader.SetUniformMatrix4 ("ProjectionMatrix", projection);
 		shader.SetUniformMatrix4 ("ModelViewMatrix", modelview);
 
@@ -78,7 +86,17 @@ int main (int argc, char **argv)
 		glEnableVertexAttribArray (0);
 		glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, sizeof (float) * 3, NULL);
 		glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, ebo);
-		glDrawElements (GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
+		glDrawElements (GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);*/
+
+
+
+
+		
+		renkine::Renderer::Render (camera, renderable, position, {});
+
+		
+
+
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

@@ -46,7 +46,7 @@ namespace renkine
 	}
 	void Matrix4::Perspective (float fov, float aspectRatio, float near, float far)
 	{
-		float q = 1.0f / tan (Math::ToRadians (fov * .5f));
+		float q = 1.0f / tan (Math::ToRadians (fov * 0.5f));
 		float a = q / aspectRatio;
 		float b = (near + far) / (near - far);
 		float c = (2.0f * near * far) / (near - far);

@@ -40,8 +40,22 @@ namespace renkine
 		return renderable;
 	}
 
-	void renkine::Renderer::Render (Renderable *renderable, Vector3 position, Vector3 rotation)
+	void renkine::Renderer::Render (Camera &camera, Renderable *renderable, Vector3 position, Vector3 rotation)
 	{
-				
+		renderable->shader.Enable ();
+		renderable->shader.SetUniformMatrix4 ("ProjectionMatrix", camera.projection);
+		renderable->shader.SetUniformMatrix4 ("ModelViewMatrix", camera.model_view);
+
+		renkine::Matrix4 transform;
+		transform.Identity ();
+		transform.Translate (position);
+		renderable->shader.SetUniformMatrix4 ("Transform", transform);
+
+		glBindVertexArray (renderable->vao);
+		glBindBuffer (GL_ARRAY_BUFFER, renderable->vbo);
+		glEnableVertexAttribArray (0);
+		glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, sizeof (renkine::Vector3), NULL);
+		glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, renderable->ebo);
+		glDrawElements (GL_TRIANGLES, renderable->mesh->index_count, GL_UNSIGNED_INT, NULL);		
 	}
 }

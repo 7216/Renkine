@@ -12,7 +12,7 @@ namespace renkine
 	{
 	public:
 		static Renderable *CreateRenderable (Mesh *mesh, const char* vertex_shader, const char *fragment_shader);
-		static void Render (Renderable *renderable, Vector3 position, Vector3 rotation);
+		static void Render (Camera &camera, Renderable *renderable, Vector3 position, Vector3 rotation);
 	};
 }
 
