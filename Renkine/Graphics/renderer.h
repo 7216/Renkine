@@ -4,14 +4,15 @@
 #include <Renkine/Types/types.h>
 #include <Renkine/Math/vector2.h>
 #include <Renkine/Types/graphics_types.h>
+#include <Renkine/Graphics/camera.h>
 
 namespace renkine
 {
-	class Renderer2D
+	class Renderer
 	{
 	public:
-		static Renderable2D *CreateRenderable (Mesh2D *mesh);
-		static void Render (Renderable2D *renderable, Vector2 position, float rotation);
+		static Renderable *CreateRenderable (Mesh *mesh, const char* vertex_shader, const char *fragment_shader);
+		static void Render (Renderable *renderable, Vector3 position, Vector3 rotation);
 	};
 }
 

@@ -4,16 +4,16 @@
 
 namespace renkine
 {
-	void MeshCreator2D::AddVertex (Mesh2D *mesh, Vector2 v)
+	void MeshCreator::AddVertex (Mesh *mesh, Vector3 v)
 	{
 		if (mesh != NULL)
 		{
 			if (mesh->vertex_count == 0)
 			{
-				mesh->vertices = (Vector2 *) malloc (sizeof (Vector2));
+				mesh->vertices = (Vector3 *) malloc (sizeof (Vector3));
 			} else
 			{
-				mesh->vertices = (Vector2 *) realloc (mesh->vertices, sizeof (Vector2) * (mesh->vertex_count + 1));
+				mesh->vertices = (Vector3 *) realloc (mesh->vertices, sizeof (Vector3) * (mesh->vertex_count + 1));
 			}
 
 			mesh->vertices [mesh->vertex_count] = v;
@@ -21,7 +21,7 @@ namespace renkine
 		}
 	}
 
-	void MeshCreator2D::AddUVCoord (Mesh2D *mesh, Vector2 v)
+	void MeshCreator::AddUVCoord (Mesh *mesh, Vector2 v)
 	{
 		if (mesh != NULL)
 		{
@@ -38,7 +38,7 @@ namespace renkine
 		}
 	}
 
-	void MeshCreator2D::AddFace (Mesh2D *mesh, u32 p0, u32 p1, u32 p2)
+	void MeshCreator::AddFace (Mesh *mesh, u32 p0, u32 p1, u32 p2)
 	{
 		if (mesh != NULL)
 		{
@@ -61,16 +61,16 @@ namespace renkine
 		}
 	}
 
-	void MeshCreator2D::AddFace (Mesh2D *mesh, u32 p0, u32 p1, u32 p2, u32 p3)
+	void MeshCreator::AddFace (Mesh *mesh, u32 p0, u32 p1, u32 p2, u32 p3)
 	{
 		AddFace (mesh, p0, p1, p2);
 		AddFace (mesh, p0, p2, p3);
 	}
 
-	Mesh2D *MeshCreator2D::CreateEmptyMesh ()
+	Mesh *MeshCreator::CreateEmptyMesh ()
 	{
-		Mesh2D *mesh = NULL;
-		mesh = (Mesh2D *) malloc (sizeof (Mesh2D));
+		Mesh *mesh = NULL;
+		mesh = (Mesh *) malloc (sizeof (Mesh));
 		if (mesh == NULL)
 		{
 			return NULL;
@@ -85,9 +85,9 @@ namespace renkine
 		return mesh;
 	}
 
-	Mesh2D *MeshCreator2D::CreateQuadMesh  (Vector2 size)
+	Mesh *MeshCreator::CreateQuadMesh  (Vector2 size)
 	{
-		Mesh2D *mesh = CreateEmptyMesh ();
+		Mesh *mesh = CreateEmptyMesh ();
 
 		if (mesh == NULL)
 		{
@@ -97,10 +97,10 @@ namespace renkine
 		size.x /= 2.0f;
 		size.y /= 2.0f;
 
-		AddVertex	(mesh, {-size.x, -size.y});
-		AddVertex	(mesh, { size.x, -size.y});
-		AddVertex	(mesh, { size.x,  size.y});
-		AddVertex	(mesh, {-size.x,  size.y});
+		AddVertex	(mesh, {-size.x, -size.y, 0.0f});
+		AddVertex	(mesh, { size.x, -size.y, 0.0f});
+		AddVertex	(mesh, { size.x,  size.y, 0.0f});
+		AddVertex	(mesh, {-size.x,  size.y, 0.0f});
 	
 		AddUVCoord	(mesh, {0.0f, 0.0f});
 		AddUVCoord	(mesh, {1.0f, 0.0f});
@@ -111,7 +111,7 @@ namespace renkine
 		return mesh;
 	}
 
-	void MeshCreator2D::DestroyMesh (Mesh2D * mesh)
+	void MeshCreator::DestroyMesh (Mesh * mesh)
 	{
 		if (mesh != NULL)
 		{

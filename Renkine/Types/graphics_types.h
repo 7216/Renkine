@@ -3,6 +3,8 @@
 
 #include <Renkine/Types/types.h>
 #include <Renkine/Math/vector2.h>
+#include <Renkine/Math/vector3.h>
+#include <Renkine/Graphics/shader.h>
 
 namespace renkine
 {
@@ -31,9 +33,9 @@ namespace renkine
 	};
 
 
-	struct Mesh2D
+	struct Mesh
 	{
-		Vector2 	*vertices;
+		Vector3 	*vertices;
 		Vector2 	*uv_coords;
 		u32			*indices;
 
@@ -42,13 +44,14 @@ namespace renkine
 		u32			index_count;
 	};
 
-	struct Renderable2D
+	struct Renderable
 	{
-		u32 _vertex_buffer;
-		u32 _uv_buffer;
-		u32 _element_buffer;
+		u32 vao;
+		u32 vbo;
+		u32 ebo;
 		
-		Mesh2D *mesh;
+		Mesh *mesh;
+		Shader shader;
 	};
 }
 
