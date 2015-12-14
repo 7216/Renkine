@@ -66,6 +66,9 @@
     <ClCompile Include="..\..\Renkine\Math\vector3.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Renkine\Graphics\camera.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Renkine\Renkine.h">

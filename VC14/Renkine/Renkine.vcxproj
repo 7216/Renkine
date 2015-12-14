@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Renkine\Graphics\camera.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\graphics.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\image.cpp" />
     <ClCompile Include="..\..\Renkine\Graphics\mesh_creator.cpp" />
