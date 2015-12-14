@@ -1,7 +1,6 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <Renkine/Renkine.h>
-#include <Renkine/math.h>
 #include <Renkine/Graphics/shader.h>
 
 
