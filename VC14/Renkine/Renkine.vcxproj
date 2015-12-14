@@ -152,6 +152,7 @@
     <ClCompile Include="..\..\Renkine\Math\vector2.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector3.cpp" />
     <ClCompile Include="..\..\Renkine\Math\vector4.cpp" />
+    <ClCompile Include="..\..\Renkine\Utils\model_loader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Renkine\Graphics\camera.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="..\..\Renkine\Renkine.h" />
     <ClInclude Include="..\..\Renkine\Types\graphics_types.h" />
     <ClInclude Include="..\..\Renkine\Types\types.h" />
+    <ClInclude Include="..\..\Renkine\Utils\model_loader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

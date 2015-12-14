@@ -34,6 +34,12 @@
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{e856a6ee-7e26-4c45-a868-4bddc9c8a5bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{262eceb9-1fc4-4b7e-9cdc-7efe15ff8003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{c20dfe7a-586d-41ab-8195-b50e14d26bd4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Renkine\Graphics\renderer.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Renkine\Graphics\camera.cpp">
       <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renkine\Utils\model_loader.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Renkine\Graphics\camera.h">
       <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renkine\Utils\model_loader.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

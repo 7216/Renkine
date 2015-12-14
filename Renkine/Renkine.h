@@ -18,4 +18,7 @@
 #include <Renkine/Graphics/camera.h>
 #include <Renkine/Graphics/shader.h>
 
+
+#include <Renkine/Utils/model_loader.h>
+
 #endif // RENKINE_H
