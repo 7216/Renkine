@@ -25,7 +25,6 @@ int main (int argc, char **argv)
 	glfwSetKeyCallback (window, renkine::Input::Key_callback);
 
 	renkine::Shader shader = renkine::Shader ("test.vert", "test.frag");
-	//shader.Enable ();
 
 	renkine::Matrix4 projection, modelview;
 	projection.Perspective (90.0f, 16.0f / 9.0f, 0.01f, 1500.0f);
@@ -65,7 +64,7 @@ int main (int argc, char **argv)
 	camera.projection.Perspective (90.0f, 16.0f / 9.0f, 0.01f, 1500.0f);
 	
 	renkine::Mesh *mesh = renkine::MeshCreator::CreateQuadMesh ({1.0f, 1.0f});
-	renkine::Renderable *renderable = renkine::Renderer::CreateRenderable (mesh, "test.vert", "test.frag");
+	renkine::Renderable *renderable = renkine::Renderer::CreateRenderable (mesh, &shader);
 
 
 	while (!glfwWindowShouldClose(window))

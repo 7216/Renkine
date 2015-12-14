@@ -11,7 +11,7 @@ namespace renkine
 	class Renderer
 	{
 	public:
-		static Renderable *CreateRenderable (Mesh *mesh, const char* vertex_shader, const char *fragment_shader);
+		static Renderable *CreateRenderable (Mesh *mesh, Shader *shader);
 		static void Render (Camera &camera, Renderable *renderable, Vector3 position, Vector3 rotation);
 	};
 }

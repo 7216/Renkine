@@ -51,7 +51,7 @@ namespace renkine
 		u32 ebo;
 		
 		Mesh *mesh;
-		Shader shader;
+		Shader *shader;
 	};
 }
 
