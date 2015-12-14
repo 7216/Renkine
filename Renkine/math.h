@@ -1,5 +1,0 @@
-#ifndef RENKINE_MATH_H
-#define RENKINE_MATH_H
-
-
-#endif // !RENKINE_MATH_MATH_H
