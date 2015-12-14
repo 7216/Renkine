@@ -23,4 +23,12 @@
     <None Include="..\..\Sandbox\test.frag" />
     <None Include="..\..\Sandbox\test.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\Sandbox\man.qqq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\Sandbox\rupsu.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

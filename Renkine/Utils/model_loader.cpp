@@ -17,33 +17,34 @@ namespace renkine
 
 		while (fgets (line, 1024, file) != NULL)
 		{
-			if (line[0] == 'v', line[1] == ' ') // Vertice
+			if (line[0] == 'v' && line[1] == ' ') // Vertice
 			{
 				float x = .0f, y = .0f, z = .0f;
 				scanf (line, "v %f %f %f", &x, &y, &z);
 				MeshCreator::AddVertex (objMesh, Vector3 (x, y, z));
 			}
-			if (line[0] == 'v', line[1] == 't') // UV
+			else if (line[0] == 'v' && line[1] == 't') // UV
 			{
 				float u = .0f, v = .0f;
 				scanf (line, "vt %f %f", &u, &v);
 				MeshCreator::AddUVCoord (objMesh, Vector2 (u, v));
 			}
 			/*
-			if (line[0] == 'v', line[1] == 'n') // Normal
+			if (line[0] == 'v' && line[1] == 'n') // Normal
 			{
 				float x = .0f, y = .0f, z = .0f;
 				scanf (line, "v %f %f %f", &x, &y, &z);
 				MeshCreator::AddVertex (objMesh, Vector3 (x, y, z));
 			}
 			*/
-			if (line[0] == 'f', line[1] == ' ') // Indices
+			else if (line[0] == 'f' && line[1] == ' ') // Indices
 			{
 				renkine::u32 p1, p2, p3;
 				scanf (line, "vt %i/%i/%i %i/%i/%i %i/%i/%i", &p1, &p2, &p3);
-				MeshCreator::AddFace (objMesh, p1, p2, p3);
+				MeshCreator::AddFace (objMesh, p1 - 1, p2 - 1, p3 - 1);
 			}
 		}
+
 		return objMesh;
 	}
 }
