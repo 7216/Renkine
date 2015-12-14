@@ -15,5 +15,6 @@
 #include <Renkine/Graphics/graphics.h>
 #include <Renkine/Graphics/mesh_creator.h>
 #include <Renkine/Graphics/renderer.h>
+#include <Renkine/Graphics/shader.h>
 
 #endif // RENKINE_H
