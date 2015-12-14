@@ -1,0 +1,9 @@
+#ifndef RENKINE_GRAPHICS_CAMERA_H
+#define RENKINE_GRAPHICS_CAMERA_H
+
+namespace renkine
+{
+	
+}
+
+#endif // RENKINE_GRAPHICS_CAMERA_H
