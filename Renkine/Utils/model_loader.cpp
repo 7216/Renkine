@@ -13,9 +13,9 @@ namespace renkine
 			printf ("Something is super fucked with your OBJ bro.");
 		}
 
-		char line[1024];
+		char line[1024] = "\0";
 
-		while (fgets (line, 1024, file))
+		while (fgets (line, 1024, file) != NULL)
 		{
 			if (line[0] == 'v', line[1] == ' ') // Vertice
 			{
