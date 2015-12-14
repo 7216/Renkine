@@ -56,6 +56,7 @@ namespace renkine
 		glEnableVertexAttribArray (0);
 		glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, sizeof (renkine::Vector3), NULL);
 		glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, renderable->ebo);
-		glDrawElements (GL_TRIANGLES, renderable->mesh->index_count, GL_UNSIGNED_INT, NULL);		
+		glDrawElements (GL_TRIANGLES, renderable->mesh->index_count, GL_UNSIGNED_INT, NULL);
+		renderable->shader.Disable ();
 	}
 }
