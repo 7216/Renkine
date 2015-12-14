@@ -139,6 +139,9 @@
     <None Include="..\..\Sandbox\test.frag" />
     <None Include="..\..\Sandbox\test.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\..\Sandbox\man.obj" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -23,4 +23,7 @@
     <None Include="..\..\Sandbox\test.frag" />
     <None Include="..\..\Sandbox\test.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\..\Sandbox\man.obj" />
+  </ItemGroup>
 </Project>

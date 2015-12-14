@@ -6,7 +6,7 @@ namespace renkine
 	{
 		Mesh *objMesh = MeshCreator::CreateEmptyMesh ();
 
-		FILE *file = fopen (filepath, "rt");
+		FILE *file = fopen (filepath, "r");
 
 		if (file == NULL)
 		{
