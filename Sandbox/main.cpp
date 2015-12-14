@@ -36,7 +36,7 @@ int main (int argc, char **argv)
 	camera.model_view = renkine::Matrix4::Translate		(camera_position);
 	camera.projection = renkine::Matrix4::Perspective	(90.0f, 16.0f / 9.0f, 0.01f, 1500.0f);
 	
-	renkine::Mesh *mesh = renkine::ModelLoader::LoadOBJ("man.obj"); //::CreateQuadMesh ({1.0f, 1.0f});
+	renkine::Mesh *mesh = renkine::ModelLoader::LoadOBJ("man.qqq"); //::CreateQuadMesh ({1.0f, 1.0f});
 	renkine::Renderable *renderable = renkine::Renderer::CreateRenderable (mesh, &shader);
 
 
