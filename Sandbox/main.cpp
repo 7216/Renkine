@@ -67,13 +67,14 @@ int main (int argc, char **argv)
 
 		shader.SetUniformMatrix4 ("ProjectionMatrix", projection);
 
-		modelview.Translate (camera_position);
-		shader.SetUniformMatrix4 ("ModelViewMatrix", modelview);
-
 		renkine::Matrix4 transform;
 		transform.Identity ();
 		transform.Translate (position);
-		shader.SetUniformMatrix4 ("Transform", transform);
+
+		modelview.Translate (camera_position);
+		modelview = modelview * transform;
+		shader.SetUniformMatrix4 ("ModelViewMatrix", modelview);
+
 		
 		glBindVertexArray (vao);
 		glBindBuffer (GL_ARRAY_BUFFER, vbo);
