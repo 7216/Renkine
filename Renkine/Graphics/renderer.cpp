@@ -46,10 +46,10 @@ namespace renkine
 		renderable->shader->SetUniformMatrix4 ("ProjectionMatrix", camera.projection);
 		renderable->shader->SetUniformMatrix4 ("ModelViewMatrix", camera.model_view);
 
-		renkine::Matrix4 transform;
-		transform.Identity ();
-		transform.Translate (position);
-		renderable->shader->SetUniformMatrix4 ("Transform", transform);
+		renkine::Matrix4 mvp;
+		mvp = renkine::Matrix4::Translate (position);
+		mvp = camera.projection * camera.model_view * mvp;
+		renderable->shader->SetUniformMatrix4 ("MVP", mvp);
 
 		glBindVertexArray (renderable->vao);
 		glBindBuffer (GL_ARRAY_BUFFER, renderable->vbo);
