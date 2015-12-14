@@ -32,6 +32,7 @@ namespace renkine
 		static Matrix4 Translate (const Vector3 translation);
 		static Matrix4 Rotate (const Vector3 axis, float angle);
 		static Matrix4 Scale (const Vector3 scale);
+		static Matrix4 Skew	(const Vector3 skew);
 
 		void Multiply (const Matrix4 &other);
 

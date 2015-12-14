@@ -97,6 +97,17 @@ namespace renkine
 		return matrix;
 	}
 
+	Matrix4 Matrix4::Skew (const Vector3 skew)
+	{
+		Matrix4 matrix = Matrix4::Identity ();
+		matrix.m01 = skew.x;
+		matrix.m10 = skew.y;
+		matrix.m02 = skew.z;
+		matrix.m12 = skew.z;
+		return matrix;
+	}
+
+
 	void Matrix4::Multiply (const Matrix4 &other)
 	{
 		for (int y = 0; y < 4; y++)

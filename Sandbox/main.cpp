@@ -1,4 +1,5 @@
 #include <Renkine/Renkine.h>
+#include <Windows.h>
 
 int main (int argc, char **argv)
 {
@@ -39,10 +40,14 @@ int main (int argc, char **argv)
 	renkine::Renderable *renderable = renkine::Renderer::CreateRenderable (mesh, &shader);
 
 
+
+	float a = 0.0f;
+
 	while (!glfwWindowShouldClose(window))
 	{
-		renkine::Graphics::Clear (renkine::RGB (0, 0, 0));
-		renkine::Renderer::Render (camera, renderable, position, {});
+		a += 0.016f * 1.0f;
+		renkine::Graphics::Clear (renkine::RGBf (0.0f, 0.0f, 0.0f));
+		renkine::Renderer::Render (camera, renderable, position, {}, {sinf (a), cos (a), 0.0f});
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
@@ -78,6 +83,8 @@ int main (int argc, char **argv)
 		{
 			position.z -= 0.016f * 5.0f;
 		}
+
+		Sleep (16);
 	}
 
 	glfwTerminate();

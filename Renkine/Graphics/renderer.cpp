@@ -40,14 +40,14 @@ namespace renkine
 		return renderable;
 	}
 
-	void renkine::Renderer::Render (Camera &camera, Renderable *renderable, Vector3 position, Vector3 rotation)
+	void renkine::Renderer::Render (Camera &camera, Renderable *renderable, Vector3 position, Vector3 rotation, Vector3 skew)
 	{
 		renderable->shader->Enable ();
 		renderable->shader->SetUniformMatrix4 ("ProjectionMatrix", camera.projection);
 		renderable->shader->SetUniformMatrix4 ("ModelViewMatrix", camera.model_view);
 
 		renkine::Matrix4 mvp;
-		mvp = renkine::Matrix4::Translate (position);
+		mvp = renkine::Matrix4::Translate (position) * renkine::Matrix4::Rotate ({1.0f, 0.0f, 0.0f}, rotation.x) * renkine::Matrix4::Rotate ({0.0f, 1.0f, 0.0f}, rotation.y) * renkine::Matrix4::Rotate ({0.0f, 0.0f, 1.0f}, rotation.z) * renkine::Matrix4::Skew (skew);
 		mvp = camera.projection * camera.model_view * mvp;
 		renderable->shader->SetUniformMatrix4 ("MVP", mvp);
 
