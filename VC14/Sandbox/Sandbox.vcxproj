@@ -140,7 +140,12 @@
     <None Include="..\..\Sandbox\test.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="..\..\Sandbox\man.obj" />
+    <Text Include="..\..\Sandbox\man.qqq">
+      <FileType>OBJ</FileType>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\Sandbox\rupsu.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
