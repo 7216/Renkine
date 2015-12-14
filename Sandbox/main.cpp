@@ -17,10 +17,12 @@ int main (int argc, char **argv)
 
 	glfwMakeContextCurrent(window);
 	glewInit ();
+	renkine::Input::Initialize ();
 
 	int width = 0, height = 0;
 	glfwGetMonitorPhysicalSize (glfwGetPrimaryMonitor (), &width, &height);
 	glfwSetWindowPos (window, width / 2, height / 2);
+	glfwSetKeyCallback (window, renkine::Input::Key_callback);
 
 	renkine::Shader shader = renkine::Shader ("test.vert", "test.frag");
 	shader.Enable ();
@@ -29,11 +31,13 @@ int main (int argc, char **argv)
 	projection.Perspective (90.0f, 16.0f / 9.0f, 0.01f, 1500.0f);
 	modelview.Identity ();
 
+	renkine::Vector3 camera_position = {0.0f, 0.0f, -5.0f};
+	renkine::Vector3 position = {0.0f, 0.0f, 0.0f};
 	float vertices[] = {
-		0.0f, 0.0f, -5.0f,
-		1.0f, 0.0f, -5.0f,
-		1.0f, 1.0f, -5.0f,
-		0.0f, 1.0f, -5.0f
+		0.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,
+		1.0f, 1.0f, 0.0f,
+		0.0f, 1.0f, 0.0f
 	};
 
 	renkine::u32 indices[] = {
@@ -62,7 +66,14 @@ int main (int argc, char **argv)
 		renkine::Graphics::Clear (renkine::RGB (0, 0, 0));
 
 		shader.SetUniformMatrix4 ("ProjectionMatrix", projection);
+
+		modelview.Translate (camera_position);
 		shader.SetUniformMatrix4 ("ModelViewMatrix", modelview);
+
+		renkine::Matrix4 transform;
+		transform.Identity ();
+		transform.Translate (position);
+		shader.SetUniformMatrix4 ("Transform", transform);
 		
 		glBindVertexArray (vao);
 		glBindBuffer (GL_ARRAY_BUFFER, vbo);
@@ -73,6 +84,60 @@ int main (int argc, char **argv)
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_LEFT))
+		{
+			camera_position.x -= 0.016f * 5.0f;
+		}
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_RIGHT))
+		{
+			camera_position.x += 0.016f * 5.0f;
+		}
+
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_UP))
+		{
+			camera_position.y += 0.016f * 5.0f;
+		}
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_DOWN))
+		{
+			camera_position.y -= 0.016f * 5.0f;
+		}
+
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_A))
+		{
+			position.x -= 0.016f * 5.0f;
+		}
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_D))
+		{
+			position.x += 0.016f * 5.0f;
+		}
+
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_W))
+		{
+			position.y += 0.016f * 5.0f;
+		}
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_S))
+		{
+			position.y -= 0.016f * 5.0f;
+		}
+
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_LEFT_CONTROL))
+		{
+			position.z += 0.016f * 5.0f;
+		}
+
+		if (renkine::Input::IsKeyDown (GLFW_KEY_LEFT_SHIFT))
+		{
+			position.z -= 0.016f * 5.0f;
+		}
 	}
 
 	glfwTerminate();
