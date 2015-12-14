@@ -1,9 +1,9 @@
 #ifndef RENKINE_TYPES_INPUT_H
 #define RENKINE_TYPES_INPUT_H
 
-#include <GL\glew.h>
-#include <GLFW\glfw3.h>
-#include <Renkine\math.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#include <Renkine/Renkine.h>
 
 #define RENKINE_DEFINES_MAX_KEYS 1024
 #define RENKINE_DEFINES_MAX_BUTTONS 32

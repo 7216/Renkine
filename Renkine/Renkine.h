@@ -1,6 +1,9 @@
 #ifndef RENKINE_H
 #define RENKINE_H
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 #include <Renkine/Math/math.h>
 #include <Renkine/Math/Vector2.h>
 #include <Renkine/Math/Vector3.h>

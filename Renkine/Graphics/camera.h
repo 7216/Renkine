@@ -9,9 +9,10 @@ namespace renkine
 	{
 	public:
 		Camera ();
-		~Camera ();
 
-	private:
+		void SetProjection	(Matrix4 projection);
+		void SetPosition	(Vector3 position);
+
 		Matrix4 projection;
 		Matrix4 model_view;
 	};

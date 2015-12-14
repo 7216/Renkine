@@ -2,9 +2,10 @@
 
 layout (location = 0) in vec4 Vertex;
 layout (location = 1) in vec4 UVCoord;
-uniform mat4 MVP_Matrix;
+uniform mat4 ProjectionMatrix;
+uniform mat4 ModelViewMatrix;
 
 void main ()
 {
-	gl_Position = MVP_Matrix * Vertex;
+	gl_Position = ProjectionMatrix * ModelViewMatrix * Vertex;
 }
