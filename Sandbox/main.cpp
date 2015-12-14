@@ -47,7 +47,7 @@ int main (int argc, char **argv)
 	{
 		a += 0.016f * 1.0f;
 		renkine::Graphics::Clear (renkine::RGBf (0.0f, 0.0f, 0.0f));
-		renkine::Renderer::Render (camera, renderable, position, {}, {sinf (a), cos (a), 0.0f});
+		renkine::Renderer::Render (camera, renderable, position, {0.0f, 0.0f, 0.0f}, {sinf (a), cosf (a), 0.0f});
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
